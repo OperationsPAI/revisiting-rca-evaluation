@@ -108,7 +108,7 @@
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2510.04711" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://doi.org/10.5281/zenodo.17105974" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -124,6 +124,23 @@
     </div>
   </section>
 
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- News. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">News</h2>
+          <div class="content has-text-justified">
+            <ul>
+              <li><strong>[2025-12-23]</strong> We are currently reorganizing the code to facilitate easy reproduction. You are also welcome to utilize the artifacts on <a href="https://doi.org/10.5281/zenodo.17105974">Zenodo</a>. If you encounter any issues, please feel free to contact the authors. Feedback is highly appreciated!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/ News. -->
+    </div>
+  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -150,20 +167,37 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
+      <!-- Motivation & Framework. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Experimental Content</h2>
+          <h2 class="title is-3">Motivation & Framework</h2>
           <div class="content has-text-justified">
+            <h3 class="title is-4">1. Preliminary Study: The Simplicity of Current Benchmarks</h3>
             <p>
-              The study begins with a preliminary investigation into the oversimplification of existing RCA benchmarks,
-              revealing that simple rule-based methods like SimpleRCA can match or surpass SOTA models on public
-              datasets due to limited fault diversity and shallow propagation patterns. To address this, the authors
-              design an automated framework for generating a more realistic benchmark, incorporating dynamic workloads,
-              systematic fault injections across 25 fault types, and multi-modal telemetry data collection. The
-              framework employs impact-driven validation to ensure only user-facing failures are included, resulting in
-              a dataset of 1,430 validated cases from over 9,152 injections.
+              A systematic analysis reveals that existing public benchmarks (e.g., Nezha, Eadro, RCAEval) lack the complexity and scale required to meaningfully differentiate sophisticated RCA models.
             </p>
+            <ul>
+              <li><strong>Key Finding: Rule-based Methods vs. SOTA.</strong> To quantify benchmark simplicity, a heuristic method called SimpleRCA—which uses basic threshold-based anomaly detection—was compared against state-of-the-art (SOTA) models.</li>
+              <li><strong>The "Type I" Fault Issue.</strong> Analysis shows that 86% of cases in existing datasets exhibit "Type I" or "Type II" patterns, where fault symptoms are either overly localized to the root-cause service or too weak to express.</li>
+            </ul>
+
+            <h3 class="title is-4">2. Identifying the "Three Sins" of Existing Datasets</h3>
+            <p>The research identifies three critical limitations in current public benchmarks:</p>
+            <ul>
+              <li><strong>Observability Blind Spots:</strong> 99% of cases lack essential telemetry types (e.g., missing metrics or logs for specific fault types).</li>
+              <li><strong>Shallow Call Graphs:</strong> Most benchmarks feature a maximum call depth of only 2–3 hops.</li>
+              <li><strong>Static Workloads:</strong> Request patterns often lack the dynamic variability found in real-world systems.</li>
+            </ul>
+
+            <h3 class="title is-4">3. The Proposed Framework: A Closed-Loop Pipeline</h3>
+            <p>
+              The framework automates the generation, collection, and validation of failure scenarios at scale, using Train Ticket (50+ services) as the system foundation.
+            </p>
+            <ul>
+              <li><strong>State-Machine Based Workload:</strong> Models user workflows as directed graphs to create recursive dependencies and combinational execution paths.</li>
+              <li><strong>Impact-Driven Validation:</strong> Uses a pragmatic oracle to filter out "silent faults." Only injections causing measurable degradation in user-facing SLIs (Success Rate, Latency) are included.</li>
+              <li><strong>Hierarchical Labels:</strong> Provides ground truth mapping from the service level down to specific code functions.</li>
+            </ul>
           </div>
           <!-- Image inserted below the text -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
@@ -181,19 +215,27 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
+      <!-- Results. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Results</h2>
           <div class="content has-text-justified">
+            <h3 class="title is-4">1. Re-evaluation of 11 SOTA Models</h3>
             <p>
-              Re-evaluation of 11 SOTA RCA models on the new benchmark demonstrates a dramatic performance drop, with an
-              average Top@1 accuracy of only 0.21 and the best model reaching merely 0.37, compared to their high scores
-              on simpler benchmarks. Execution times escalated from seconds to hours, exposing severe scalability
-              issues. Further analysis identifies three critical failure patterns: scalability limitations under high
-              data volumes, observability blind spots where models fail due to missing telemetry, and modeling
-              bottlenecks where assumptions break in complex scenarios.
+              The research re-engineers and evaluates 11 recent SOTA RCA methods on the new benchmark.
             </p>
+            <ul>
+              <li><strong>Overall Performance:</strong> When confronted with complex fault propagation, the performance of existing models degrades significantly. The average Top@1 accuracy across all models is only 0.21, compared to 90%+ reported on simpler datasets.</li>
+              <li><strong>Fault-Specific Performance:</strong> Models show distinct blind spots, particularly in DNS, TimeSkew, and Network Corrupt scenarios.</li>
+            </ul>
+
+            <h3 class="title is-4">2. Systematic Failure Mode Analysis</h3>
+            <p>The study identifies three critical modeling bottlenecks:</p>
+            <ul>
+              <li><strong>Scalability Issues:</strong> Execution times for many models escalate from seconds to hours as data volume increases.</li>
+              <li><strong>Observability Blind Spots:</strong> Models fail to interpret the cessation of telemetry (e.g., PodKill) or contradictory signals across logs and traces.</li>
+              <li><strong>Modeling Bottlenecks:</strong> Rigid assumptions (e.g., frequency-based fault manifestation) are invalidated by complex scenarios.</li>
+            </ul>
           </div>
           <!-- Image inserted below the text -->
           <div class="content has-text-centered" style="margin-top: 2rem;">
@@ -201,28 +243,35 @@
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
+      <!--/ Results. -->
     </div>
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
+      <!-- Insight. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Insight</h2>
+          <h2 class="title is-3">Insight & Resources</h2>
           <div class="content has-text-justified">
             <p>
               The study concludes that current RCA progress is inflated by simplistic benchmarks, urging a shift toward
               co-developing challenging benchmarks and robust algorithms. Key insights emphasize the need for
               fault-aware models that handle incomplete observability and complex causality, as well as metrics beyond
-              accuracy, such as diagnostic coherence. The release of the benchmark framework and model implementations
-              aims to foster community-wide improvements in RCA research.
+              accuracy, such as diagnostic coherence.
             </p>
+            <p>
+              To facilitate community progress, the research artifacts are publicly released:
+            </p>
+            <ul>
+              <li><strong>Benchmark Framework:</strong> Automated toolchain for fault injection and data collection.</li>
+              <li><strong>New Dataset:</strong> 1,430 validated failure cases covering 25 fault types.</li>
+              <li><strong>Unified Evaluation Suite:</strong> Re-engineered and containerized versions of 11 SOTA RCA models.</li>
+            </ul>
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
+      <!--/ Insight. -->
     </div>
   </section>
 
