@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking the Evaluation of Microservice RCA with a Fault Propagation-Aware Benchmark</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://profile.aoyangfang.top">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <!-- <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://hypernerf.github.io">
+              HyperNeRF
+            </a>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Rethinking the Evaluation of Microservice RCA with a Fault Propagation-Aware Benchmark</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Aoyang Fang,</span>
+              <span class="author-block">Songhan Zhang,</span>
+              <span class="author-block">Yifan Yang,</span>
+              <span class="author-block">Haotong Wu,</span>
+              <span class="author-block">Junjielong Xu,</span>
+              <span class="author-block">Xuyang Wang,</span>
+              <span class="author-block">Rui Wang,</span>
+              <span class="author-block">Manyi Wang,</span>
+              <span class="author-block">Qisheng Lu,</span>
+              <span class="author-block">Pinjia He</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">The Chinese University of Hong Kong, Shenzhen</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2510.04711" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2510.04711" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              While cloud-native microservice architectures have revolutionized software development, their inherent operational complexity makes failure Root Cause Analysis (RCA) a critical yet challenging task. Numerous data-driven RCA models have been proposed to address this challenge. However, we find that the benchmarks used to evaluate these models are often too simple to reflect real-world scenarios. Our preliminary study reveals that simple rule-based methods can achieve performance comparable to or even surpassing state-of-the-art (SOTA) models on four widely used public benchmarks. This finding suggests that the oversimplification of existing benchmarks might lead to an overestimation of the performance of RCA methods. 
+            </p>
+            <p>
+              To further investigate the oversimplification issue, we conduct a systematic analysis of popular public RCA benchmarks, identifying key limitations in their fault injection strategies, call graph structures, and telemetry signal patterns. Based on these insights, we propose an automated framework for generating more challenging and comprehensive benchmarks that include complex fault propagation scenarios. Our new dataset contains 1,430 validated failure cases from 9,152 fault injections, covering 25 fault types across 6 categories, dynamic workloads, and hierarchical ground-truth labels that map failures from services down to code-level causes. Crucially, to ensure the failure cases are relevant to IT operations, each case is validated to have a discernible impact on user-facing SLIs. 
+            </p>
+            <p>
+              Our re-evaluation of 11 SOTA models on this new benchmark shows that they achieve low Top@1 accuracies, averaging 0.21, with the best-performing model reaching merely 0.37, and execution times escalating from seconds to hours. From this analysis, we identify three critical failure patterns common to current RCA models: scalability issues, observability blind spots, and modeling bottlenecks. Based on these findings, we provide actionable guidelines for future RCA research. We emphasize the need for robust algorithms and the co-development of challenging benchmarks. To facilitate further research, we publicly release our benchmark generation framework, the new dataset, and our implementations of the evaluated SOTA models.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experimental Content</h2>
+          <div class="content has-text-justified">
+            <p>
+              The study begins with a preliminary investigation into the oversimplification of existing RCA benchmarks,
+              revealing that simple rule-based methods like SimpleRCA can match or surpass SOTA models on public
+              datasets due to limited fault diversity and shallow propagation patterns. To address this, the authors
+              design an automated framework for generating a more realistic benchmark, incorporating dynamic workloads,
+              systematic fault injections across 25 fault types, and multi-modal telemetry data collection. The
+              framework employs impact-driven validation to ensure only user-facing failures are included, resulting in
+              a dataset of 1,430 validated cases from over 9,152 injections.
+            </p>
+          </div>
+          <!-- Image inserted below the text -->
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/dataset_construction_figure.png">
+
+            <p class="is-size-6 has-text-grey" style="margin-top: 0.5rem;">
+              <strong>Fig. 3:</strong> The six-stage pipeline for our benchmark dataset construction, from system
+              selection to the final validated and labeled failure cases.
+            </p>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+      </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <p>
+              Re-evaluation of 11 SOTA RCA models on the new benchmark demonstrates a dramatic performance drop, with an
+              average Top@1 accuracy of only 0.21 and the best model reaching merely 0.37, compared to their high scores
+              on simpler benchmarks. Execution times escalated from seconds to hours, exposing severe scalability
+              issues. Further analysis identifies three critical failure patterns: scalability limitations under high
+              data volumes, observability blind spots where models fail due to missing telemetry, and modeling
+              bottlenecks where assumptions break in complex scenarios.
+            </p>
+          </div>
+          <!-- Image inserted below the text -->
+          <div class="content has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/rq5_perf_by_fault_type_figure.jpg">
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Insight</h2>
+          <div class="content has-text-justified">
+            <p>
+              The study concludes that current RCA progress is inflated by simplistic benchmarks, urging a shift toward
+              co-developing challenging benchmarks and robust algorithms. Key insights emphasize the need for
+              fault-aware models that handle incomplete observability and complex causality, as well as metrics beyond
+              accuracy, such as diagnostic coherence. The release of the benchmark framework and model implementations
+              aims to foster community-wide improvements in RCA research.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This template is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
